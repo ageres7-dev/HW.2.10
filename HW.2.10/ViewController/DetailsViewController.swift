@@ -54,7 +54,7 @@ class DetailsViewController: UIViewController {
     
     private func fetchImage() {
         guard let url = URL(string: characterInfo.image) else { return }
-        
+        print(characterInfo.image)
         URLSession.shared.dataTask(with: url) { (data, _, error) in
             if let error = error {
                 print(error)

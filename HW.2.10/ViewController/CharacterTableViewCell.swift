@@ -8,6 +8,27 @@
 import UIKit
 
 class CharacterTableViewCell: UITableViewCell {
-
- 
+    
+    func configure(with character: Results) {
+        var content = defaultContentConfiguration()
+        
+        content.text = character.name
+        content.imageProperties.cornerRadius = 20
+        content.imageProperties.reservedLayoutSize = CGSize(width: 40, height: 40)
+        content.imageProperties.maximumSize = CGSize(width: 40, height: 40)
+        content.image = UIImage(named: "default")
+        
+        DispatchQueue.global().async {
+            let stringURL = character.image
+            guard let imageURL = URL(string: stringURL) else { return }
+            guard let imageData = try? Data(contentsOf: imageURL) else { return }
+            
+            DispatchQueue.main.async {
+                content.image = UIImage(data: imageData)
+                self.contentConfiguration = content
+            }
+            
+        }
+        contentConfiguration = content
+    }
 }

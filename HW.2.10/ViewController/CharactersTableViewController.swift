@@ -28,30 +28,31 @@ class CharactersTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-     
-        let cell = tableView.dequeueReusableCell(withIdentifier: "character", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "character", for: indexPath) as! CharacterTableViewCell
+
         let person = characters.results[indexPath.row]
+        cell.configure(with: person)
+        /*
         var content = cell.defaultContentConfiguration()
         content.text = person.name
+        content.imageProperties.cornerRadius = 20
         content.imageProperties.reservedLayoutSize = CGSize(width: 40, height: 40)
         content.imageProperties.maximumSize = CGSize(width: 40, height: 40)
+        content.image = UIImage(named: "default")
         
-        /*
-//        Не понимаю почему это не работает
         DispatchQueue.global().async {
-            let stringURL = self.characters.results[indexPath.row].image
+            let stringURL = person.image
             guard let imageURL = URL(string: stringURL) else { return }
             guard let imageData = try? Data(contentsOf: imageURL) else { return }
             
             DispatchQueue.main.async {
-//                tableView.cellForRow(at: indexPath)?.imageView?.image = UIImage(data: imageData)
-                content.image = UIImage(named: "avatar")
-                self.tableView.reloadData()
+                content.image = UIImage(data: imageData)
+                cell.contentConfiguration = content
             }
         }
-        */
         
         cell.contentConfiguration = content
+         */
         return cell
     }
     
@@ -63,7 +64,6 @@ class CharactersTableViewController: UITableViewController {
         { return }
         detailsVC.characterInfo = characters.results[indexPath.row]
     }
-
 
 }
 
