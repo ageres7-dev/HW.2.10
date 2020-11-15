@@ -7,9 +7,12 @@
 
 import Foundation
 
+
+
 class ImageManager {
     static let shared = ImageManager()
     
+    //не смог понять в чем проблема
     func fetchImage(url: String) -> Data? {
         var result: Data?
         guard let url = URL(string: url) else { return nil }
@@ -24,6 +27,13 @@ class ImageManager {
         return result
     }
     
+}
+
+//Не уверен, что данное перечисление нужно писать тут
+enum StatusCharacter: String {
+    case alive = "https://rickandmortyapi.com/api/character/?status=alive"
+    case dead = "https://rickandmortyapi.com/api/character/?status=dead"
+    case unknown =  "https://rickandmortyapi.com/api/character/?status=unknown"
 }
 
 

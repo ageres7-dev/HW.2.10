@@ -24,7 +24,6 @@ class DetailsViewController: UIViewController {
         
         fetchImage()
         setInfoLabels()
-
         
     }
     
@@ -41,9 +40,9 @@ class DetailsViewController: UIViewController {
             case 1: label.text = "Species: \(characterInfo.species)"
             case 2: label.text = "Type: \(characterInfo.type)"
             case 3: label.text = "Gender: \(characterInfo.gender)"
-            case 4: label.text = "Origin location: \(characterInfo.origin.name)"
+            case 4: label.text = "Origin location:\n\(characterInfo.origin.name)"
             default: label.text =
-                "Last known location endpoint:\n \(characterInfo.location.name)"
+                "Last known location endpoint:\n\(characterInfo.location.name)"
             }
         }
     }
@@ -80,6 +79,5 @@ class DetailsViewController: UIViewController {
              
          }.resume()
      }
-    
     
 }

@@ -8,13 +8,14 @@
 import UIKit
 
 
+
 class CharactersTableViewController: UITableViewController {
+    
     private var characters = Character(results: [])
-    private let characterURL = "https://rickandmortyapi.com/api/character/"
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        fetchCharacters()
+        fetchCharacters(from: StatusCharacter.alive.rawValue)
     }
 
     // MARK: - Table view data source
@@ -32,30 +33,17 @@ class CharactersTableViewController: UITableViewController {
 
         let person = characters.results[indexPath.row]
         cell.configure(with: person)
-        /*
-        var content = cell.defaultContentConfiguration()
-        content.text = person.name
-        content.imageProperties.cornerRadius = 20
-        content.imageProperties.reservedLayoutSize = CGSize(width: 40, height: 40)
-        content.imageProperties.maximumSize = CGSize(width: 40, height: 40)
-        content.image = UIImage(named: "default")
-        
-        DispatchQueue.global().async {
-            let stringURL = person.image
-            guard let imageURL = URL(string: stringURL) else { return }
-            guard let imageData = try? Data(contentsOf: imageURL) else { return }
-            
-            DispatchQueue.main.async {
-                content.image = UIImage(data: imageData)
-                cell.contentConfiguration = content
-            }
-        }
-        
-        cell.contentConfiguration = content
-         */
         return cell
     }
     
+    @IBAction func actionSegmentedControl(_ sender: UISegmentedControl) {
+        
+        switch sender.selectedSegmentIndex {
+        case 0: fetchCharacters(from: StatusCharacter.alive.rawValue)
+        case 1: fetchCharacters(from: StatusCharacter.dead.rawValue)
+        default: fetchCharacters(from: StatusCharacter.unknown.rawValue)
+        }
+    }
     // MARK: - Navigation
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -64,14 +52,14 @@ class CharactersTableViewController: UITableViewController {
         { return }
         detailsVC.characterInfo = characters.results[indexPath.row]
     }
-
+    
 }
 
 
 extension CharactersTableViewController {
   
-    private func fetchCharacters() {
-        guard let url = URL(string: characterURL) else { return }
+    private func fetchCharacters(from url:String) {
+        guard let url = URL(string: url) else { return }
         URLSession.shared.dataTask(with: url) { [self] (data, _, error) in
             
             if let error = error {
