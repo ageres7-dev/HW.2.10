@@ -7,98 +7,67 @@
 
 import UIKit
 
-enum URLRickAndMorty: String {
-    case character = "https://rickandmortyapi.com/api/character/"
-    //удалить если не пригодятся
-    case location = "https://rickandmortyapi.com/api/location/"
-    case episode = "https://rickandmortyapi.com/api/episode/"
-}
 
 class CharactersTableViewController: UITableViewController {
-    var characters = Character(results: [])
-    
-//    var character: Result = []
+    private var characters = Character(results: [])
+    private let characterURL = "https://rickandmortyapi.com/api/character/"
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        fetchcharacters()
-
+        fetchCharacters()
     }
 
     // MARK: - Table view data source
-
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         characters.results.count
-//        return 0
+
     }
 
-    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+     
         let cell = tableView.dequeueReusableCell(withIdentifier: "character", for: indexPath)
         let person = characters.results[indexPath.row]
         var content = cell.defaultContentConfiguration()
         content.text = person.name
+        content.imageProperties.reservedLayoutSize = CGSize(width: 40, height: 40)
+        content.imageProperties.maximumSize = CGSize(width: 40, height: 40)
+        
         cell.contentConfiguration = content
+//        Не понимаю почему это не работает
+        DispatchQueue.global().async {
+            let stringURL = self.characters.results[indexPath.row].image
+            guard let imageURL = URL(string: stringURL) else { return }
+            guard let imageData = try? Data(contentsOf: imageURL) else { return }
+            
+            DispatchQueue.main.async {
+                cell.imageView?.image = UIImage(data: imageData)
+            }
+        }
         
         return cell
     }
     
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        let detailsVC = segue.destination as! DetailsViewController
+        guard let indexPath = tableView.indexPathForSelectedRow else
+        { return }
+        detailsVC.result = characters.results[indexPath.row]
     }
-    */
+
 
 }
 
 
 extension CharactersTableViewController {
-    private func fetchcharacters() {
-        guard let url = URL(string: URLRickAndMorty.character.rawValue) else { return }
+  
+    private func fetchCharacters() {
+        guard let url = URL(string: characterURL) else { return }
         URLSession.shared.dataTask(with: url) { [self] (data, _, error) in
             
             if let error = error {
