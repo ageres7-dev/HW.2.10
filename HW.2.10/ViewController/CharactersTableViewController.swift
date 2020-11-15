@@ -36,7 +36,7 @@ class CharactersTableViewController: UITableViewController {
         content.imageProperties.reservedLayoutSize = CGSize(width: 40, height: 40)
         content.imageProperties.maximumSize = CGSize(width: 40, height: 40)
         
-        cell.contentConfiguration = content
+        /*
 //        Не понимаю почему это не работает
         DispatchQueue.global().async {
             let stringURL = self.characters.results[indexPath.row].image
@@ -44,10 +44,14 @@ class CharactersTableViewController: UITableViewController {
             guard let imageData = try? Data(contentsOf: imageURL) else { return }
             
             DispatchQueue.main.async {
-                cell.imageView?.image = UIImage(data: imageData)
+//                tableView.cellForRow(at: indexPath)?.imageView?.image = UIImage(data: imageData)
+                content.image = UIImage(named: "avatar")
+                self.tableView.reloadData()
             }
         }
+        */
         
+        cell.contentConfiguration = content
         return cell
     }
     
@@ -57,7 +61,7 @@ class CharactersTableViewController: UITableViewController {
         let detailsVC = segue.destination as! DetailsViewController
         guard let indexPath = tableView.indexPathForSelectedRow else
         { return }
-        detailsVC.result = characters.results[indexPath.row]
+        detailsVC.characterInfo = characters.results[indexPath.row]
     }
 
 

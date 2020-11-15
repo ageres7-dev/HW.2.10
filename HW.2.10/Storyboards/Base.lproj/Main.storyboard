@@ -54,24 +54,76 @@
                                     <constraint firstAttribute="width" secondItem="FJK-3s-iNG" secondAttribute="height" multiplier="1:1" id="ffQ-mL-mXm"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="status" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EeR-bQ-60Q">
-                                <rect key="frame" x="164" y="285" width="47" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="EPu-yu-HEY">
+                                <rect key="frame" x="16" y="282" width="343" height="188"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EeR-bQ-60Q">
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="25.5"/>
+                                        <fontDescription key="fontDescription" name="LaoSangamMN" family="Lao Sangam MN" pointSize="19"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Msv-QZ-MJz">
+                                        <rect key="frame" x="0.0" y="32.5" width="343" height="25.5"/>
+                                        <fontDescription key="fontDescription" name="LaoSangamMN" family="Lao Sangam MN" pointSize="19"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AzR-D0-R9D">
+                                        <rect key="frame" x="0.0" y="65" width="343" height="25.5"/>
+                                        <fontDescription key="fontDescription" name="LaoSangamMN" family="Lao Sangam MN" pointSize="19"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" tag="3" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fwc-24-vyY">
+                                        <rect key="frame" x="0.0" y="97.5" width="343" height="25.5"/>
+                                        <fontDescription key="fontDescription" name="LaoSangamMN" family="Lao Sangam MN" pointSize="19"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" tag="4" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tRc-dg-gy8">
+                                        <rect key="frame" x="0.0" y="130" width="343" height="25.5"/>
+                                        <fontDescription key="fontDescription" name="LaoSangamMN" family="Lao Sangam MN" pointSize="19"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" tag="5" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gey-cM-oMx">
+                                        <rect key="frame" x="0.0" y="162.5" width="343" height="25.5"/>
+                                        <fontDescription key="fontDescription" name="LaoSangamMN" family="Lao Sangam MN" pointSize="19"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="d32-Dv-R3d">
+                                <rect key="frame" x="177.5" y="171" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="z0j-gM-mYj"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="z0j-gM-mYj" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="EPu-yu-HEY" secondAttribute="bottom" constant="16" id="2E2-XR-EnV"/>
+                            <constraint firstItem="z0j-gM-mYj" firstAttribute="trailing" secondItem="EPu-yu-HEY" secondAttribute="trailing" constant="16" id="Q7q-Ef-kwr"/>
                             <constraint firstItem="FJK-3s-iNG" firstAttribute="height" secondItem="2J2-Eo-5Ro" secondAttribute="height" multiplier="0.254873" id="RLG-N2-1AE"/>
+                            <constraint firstItem="d32-Dv-R3d" firstAttribute="centerX" secondItem="FJK-3s-iNG" secondAttribute="centerX" id="gbr-ZO-K3s"/>
                             <constraint firstItem="FJK-3s-iNG" firstAttribute="centerX" secondItem="2J2-Eo-5Ro" secondAttribute="centerX" id="kLB-0m-dGF"/>
+                            <constraint firstItem="EPu-yu-HEY" firstAttribute="top" secondItem="FJK-3s-iNG" secondAttribute="bottom" constant="16" id="nPP-pk-Wcc"/>
+                            <constraint firstItem="d32-Dv-R3d" firstAttribute="centerY" secondItem="FJK-3s-iNG" secondAttribute="centerY" id="p2B-pQ-u5H"/>
                             <constraint firstItem="FJK-3s-iNG" firstAttribute="top" secondItem="z0j-gM-mYj" secondAttribute="top" id="rWS-fk-Yz6"/>
-                            <constraint firstItem="EeR-bQ-60Q" firstAttribute="top" secondItem="FJK-3s-iNG" secondAttribute="bottom" constant="19" id="rrS-2L-eb0"/>
-                            <constraint firstItem="EeR-bQ-60Q" firstAttribute="centerX" secondItem="2J2-Eo-5Ro" secondAttribute="centerX" id="tnc-cF-EaF"/>
+                            <constraint firstItem="EPu-yu-HEY" firstAttribute="leading" secondItem="z0j-gM-mYj" secondAttribute="leading" constant="16" id="tpY-gA-62w"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="3ky-kl-gbL"/>
+                    <connections>
+                        <outlet property="activityIndicator" destination="d32-Dv-R3d" id="L7s-HA-CB3"/>
+                        <outlet property="characterPhoto" destination="FJK-3s-iNG" id="st5-Iy-Wdp"/>
+                        <outletCollection property="infoLabels" destination="EeR-bQ-60Q" collectionClass="NSMutableArray" id="2R9-zk-AxY"/>
+                        <outletCollection property="infoLabels" destination="AzR-D0-R9D" collectionClass="NSMutableArray" id="lrv-G8-jd8"/>
+                        <outletCollection property="infoLabels" destination="Msv-QZ-MJz" collectionClass="NSMutableArray" id="nCw-Ms-cW2"/>
+                        <outletCollection property="infoLabels" destination="fwc-24-vyY" collectionClass="NSMutableArray" id="dEH-sD-B8i"/>
+                        <outletCollection property="infoLabels" destination="tRc-dg-gy8" collectionClass="NSMutableArray" id="sf3-zY-pKl"/>
+                        <outletCollection property="infoLabels" destination="Gey-cM-oMx" collectionClass="NSMutableArray" id="QVO-O6-gfI"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bRE-iT-cXN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

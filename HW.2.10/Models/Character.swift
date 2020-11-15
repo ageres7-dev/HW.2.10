@@ -18,7 +18,7 @@ struct Results: Decodable {
     let location: Location
     let image: String
 }
-
+//
 struct Origin: Decodable {
     let name: String
 }
