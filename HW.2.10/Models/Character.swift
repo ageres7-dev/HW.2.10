@@ -6,6 +6,7 @@
 //
 struct Character: Decodable {
     var results: [Results]
+    
 }
 
 struct Results: Decodable {
