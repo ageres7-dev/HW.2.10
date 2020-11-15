@@ -15,7 +15,6 @@ class DetailsViewController: UIViewController {
     
     var characterInfo: Results!
 
-
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = characterInfo.name
@@ -25,11 +24,9 @@ class DetailsViewController: UIViewController {
         
         fetchImage()
         setInfoLabels()
-        
-//        characterInfo.origin.name
+
         
     }
-    
     
     override func viewDidLayoutSubviews() {
         characterPhoto.layer.cornerRadius = characterPhoto.frame.width / 2
@@ -49,26 +46,40 @@ class DetailsViewController: UIViewController {
                 "Last known location endpoint:\n \(characterInfo.location.name)"
             }
         }
-        
     }
     
+    /*
+     // не смог заставить это работать
     private func fetchImage() {
-        guard let url = URL(string: characterInfo.image) else { return }
-        print(characterInfo.image)
-        URLSession.shared.dataTask(with: url) { (data, _, error) in
-            if let error = error {
-                print(error)
-                return
-            }
+        
+        DispatchQueue.global().async {
+            guard let data = ImageManager.shared.fetchImage(url: self.characterInfo.image) else { return }
             
-            if let data = data, let image = UIImage(data: data) {
-                DispatchQueue.main.async {
-                    self.characterPhoto.image = image
-                    self.activityIndicator.stopAnimating()
-                }
+            DispatchQueue.main.async {
+                self.characterPhoto.image = UIImage(data: data)
+                self.activityIndicator.stopAnimating()
             }
-            
-        }.resume()
+        }
     }
-
+     */
+    
+     private func fetchImage() {
+         guard let url = URL(string: characterInfo.image) else { return }
+         URLSession.shared.dataTask(with: url) { (data, _, error) in
+             if let error = error {
+                 print(error)
+                 return
+             }
+             
+             if let data = data, let image = UIImage(data: data) {
+                 DispatchQueue.main.async {
+                     self.characterPhoto.image = image
+                     self.activityIndicator.stopAnimating()
+                 }
+             }
+             
+         }.resume()
+     }
+    
+    
 }

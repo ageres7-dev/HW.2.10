@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		A559A8812561822B00422AD7 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A559A8802561822B00422AD7 /* DetailsViewController.swift */; };
 		A559A88B2561AC5800422AD7 /* CharacterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A559A88A2561AC5800422AD7 /* CharacterTableViewCell.swift */; };
+		A559A88E2561C6A800422AD7 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A559A88D2561C6A800422AD7 /* NetworkManager.swift */; };
 		A5888F6A255EAB3D009DB3B9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5888F69255EAB3D009DB3B9 /* AppDelegate.swift */; };
 		A5888F6C255EAB3D009DB3B9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5888F6B255EAB3D009DB3B9 /* SceneDelegate.swift */; };
 		A5888F71255EAB3D009DB3B9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5888F6F255EAB3D009DB3B9 /* Main.storyboard */; };
@@ -22,6 +23,7 @@
 /* Begin PBXFileReference section */
 		A559A8802561822B00422AD7 /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 		A559A88A2561AC5800422AD7 /* CharacterTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterTableViewCell.swift; sourceTree = "<group>"; };
+		A559A88D2561C6A800422AD7 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		A5888F66255EAB3D009DB3B9 /* HW.2.10.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HW.2.10.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5888F69255EAB3D009DB3B9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A5888F6B255EAB3D009DB3B9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -96,6 +98,7 @@
 		A5888F80255F38ED009DB3B9 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
+				A559A88D2561C6A800422AD7 /* NetworkManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -193,6 +196,7 @@
 				A5888F6A255EAB3D009DB3B9 /* AppDelegate.swift in Sources */,
 				A5888F8D255FA073009DB3B9 /* CharactersTableViewController.swift in Sources */,
 				A5888F6C255EAB3D009DB3B9 /* SceneDelegate.swift in Sources */,
+				A559A88E2561C6A800422AD7 /* NetworkManager.swift in Sources */,
 				A5888F88255F3B8A009DB3B9 /* Character.swift in Sources */,
 				A559A8812561822B00422AD7 /* DetailsViewController.swift in Sources */,
 				A559A88B2561AC5800422AD7 /* CharacterTableViewCell.swift in Sources */,
