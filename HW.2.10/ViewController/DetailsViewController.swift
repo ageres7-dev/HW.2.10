@@ -31,7 +31,6 @@ class DetailsViewController: UIViewController {
         characterPhoto.layer.cornerRadius = characterPhoto.frame.width / 2
     }
     
-    
     private func setInfoLabels() {
         infoLabels.forEach { (label) in
 

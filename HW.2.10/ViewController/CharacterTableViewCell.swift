@@ -10,6 +10,10 @@ import UIKit
 class CharacterTableViewCell: UITableViewCell {
     
     func configure(with character: Results) {
+        let selectedColor = UIView()
+        selectedColor.backgroundColor = .systemGreen
+        selectedBackgroundView = selectedColor
+        
         var content = defaultContentConfiguration()
         
         content.text = character.name
