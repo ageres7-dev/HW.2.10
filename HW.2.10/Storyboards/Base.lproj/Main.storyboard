@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="character" id="P0f-64-tzB">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="character" id="P0f-64-tzB" customClass="CharacterTableViewCell" customModule="HW_2_10" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="43.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="P0f-64-tzB" id="n1o-Ds-g3D">
@@ -49,13 +49,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="FJK-3s-iNG">
-                                <rect key="frame" x="102.5" y="96" width="170" height="170"/>
+                                <rect key="frame" x="102.5" y="112" width="170" height="170"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="FJK-3s-iNG" secondAttribute="height" multiplier="1:1" id="ffQ-mL-mXm"/>
                                 </constraints>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="EPu-yu-HEY">
-                                <rect key="frame" x="16" y="282" width="343" height="188"/>
+                                <rect key="frame" x="16" y="298" width="343" height="188"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EeR-bQ-60Q">
                                         <rect key="frame" x="0.0" y="0.0" width="343" height="25.5"/>
@@ -96,7 +96,7 @@
                                 </subviews>
                             </stackView>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="d32-Dv-R3d">
-                                <rect key="frame" x="177.5" y="171" width="20" height="20"/>
+                                <rect key="frame" x="177.5" y="187" width="20" height="20"/>
                             </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="z0j-gM-mYj"/>
@@ -109,7 +109,7 @@
                             <constraint firstItem="FJK-3s-iNG" firstAttribute="centerX" secondItem="2J2-Eo-5Ro" secondAttribute="centerX" id="kLB-0m-dGF"/>
                             <constraint firstItem="EPu-yu-HEY" firstAttribute="top" secondItem="FJK-3s-iNG" secondAttribute="bottom" constant="16" id="nPP-pk-Wcc"/>
                             <constraint firstItem="d32-Dv-R3d" firstAttribute="centerY" secondItem="FJK-3s-iNG" secondAttribute="centerY" id="p2B-pQ-u5H"/>
-                            <constraint firstItem="FJK-3s-iNG" firstAttribute="top" secondItem="z0j-gM-mYj" secondAttribute="top" id="rWS-fk-Yz6"/>
+                            <constraint firstItem="FJK-3s-iNG" firstAttribute="top" secondItem="z0j-gM-mYj" secondAttribute="top" constant="16" id="rWS-fk-Yz6"/>
                             <constraint firstItem="EPu-yu-HEY" firstAttribute="leading" secondItem="z0j-gM-mYj" secondAttribute="leading" constant="16" id="tpY-gA-62w"/>
                         </constraints>
                     </view>

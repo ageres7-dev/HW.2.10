@@ -15,19 +15,27 @@ class DetailsViewController: UIViewController {
     
     var characterInfo: Results!
 
+
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = characterInfo.name
         
         activityIndicator.startAnimating()
         activityIndicator.hidesWhenStopped = true
-        characterPhoto.layer.cornerRadius = characterPhoto.frame.width / 2
+        
         fetchImage()
         setInfoLabels()
         
 //        characterInfo.origin.name
         
     }
+    
+    
+    override func viewDidLayoutSubviews() {
+        characterPhoto.layer.cornerRadius = characterPhoto.frame.width / 2
+    }
+    
+    
     private func setInfoLabels() {
         infoLabels.forEach { (label) in
 
